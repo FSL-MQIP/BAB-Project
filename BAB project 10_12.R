@@ -32,11 +32,26 @@ Spore$Count[Spore$Count == "<18"] = "4"
 
 #clean survey data first
 farm_info = read.csv("Farm Practices Survey_Edited 09222020.csv")
+farm_info = farm_info[1:7,]
 colnames(farm_info) = c("name","ID","bed_type","bed_top_freq","alle_scra_freq","detergent","bleach","hold_scra","hold_flush","udder_clip_freq","udder_clean_score","teat_end_clean","teat_end_cond")
 str(farm_info)
 
 farm_info$bed_type = as.character(farm_info$bed_type)
 farm_info$bed_type[farm_info$bed_type == "Manure solids"] = "Manure Solids"
+
+farm_info = subset(farm_info, 
+                   select = -alle_scra_freq) # Remove alleway from variable list
+
+farm_info$udder_clip_freq[c(2,3,4,7)] = "High"
+farm_info$udder_clip_freq[-c(2,3,4,7)] = "Low" # Change udder clip freq to binary
+
+farm_info$udder_clean_score[c(1,3,6,7)] = "Yes" # Change udder clean score to binary
+
+farm_info$teat_end_clean[c(1,4,6,7)] = "Yes" # Change teat end clean to binary
+
+farm_info$teat_end_cond[c(1,4,6)] = "Yes" # Change teat end cond to binary
+
+
 
 #merge
 Spore2 = left_join(Spore, farm_info, by = "ID")
@@ -52,7 +67,6 @@ Spore_noD$Count = as.numeric(Spore_noD$Count)
 
 Spore_noD$detergent = as.factor(Spore_noD$detergent)
 Spore_noD$detergent = droplevels(Spore_noD$detergent)
-Spore_noD$alle_scra_freq = as.factor(Spore_noD$alle_scra_freq)
 Spore_noD$udder_clip_freq = as.factor(Spore_noD$udder_clip_freq)
 Spore_noD$hold_scra = as.factor(Spore_noD$hold_scra)
 Spore_noD$bed_type = as.factor(Spore_noD$bed_type)
@@ -61,9 +75,12 @@ Spore_noD$udder_clean_score = as.factor(Spore_noD$udder_clean_score)
 Spore_noD$teat_end_cond = as.factor(Spore_noD$teat_end_cond)
 Spore_noD$teat_end_clean = as.factor(Spore_noD$teat_end_clean)
 
+
+
+
 ##2)Exploratory analysis
 #the vif value
-fit = glmer(Count ~ bed_type + bed_top_freq+ alle_scra_freq + detergent  
+fit = glmer(Count ~ bed_type + bed_top_freq + detergent  
        + bleach + hold_scra + hold_flush + udder_clip_freq + udder_clean_score 
        +teat_end_clean + teat_end_cond + (1|ID), data= Spore_noD, family = poisson)
 vif(fit)
