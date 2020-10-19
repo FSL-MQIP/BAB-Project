@@ -51,6 +51,10 @@ farm_info$teat_end_clean[c(1,4,6,7)] = "Yes" # Change teat end clean to binary
 
 farm_info$teat_end_cond[c(1,4,6)] = "Yes" # Change teat end cond to binary
 
+farm_info$bed_type[6] = "Sand" #Lawnel's farm predominantly uses sand
+
+write.table(farm_info, file = "farm_info.xls", append = FALSE, sep = "\t", dec = ".",
+            row.names = FALSE, col.names = TRUE)
 
 
 #merge
