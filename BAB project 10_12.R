@@ -53,6 +53,9 @@ farm_info$teat_end_cond[c(1,4,6)] = "Yes" # Change teat end cond to binary
 
 farm_info$bed_type[6] = "Sand" #Lawnel's farm predominantly uses sand
 
+farm_info$bed_top_freq[c(4,5,7)] ="High"
+farm_info$bed_top_freq[-c(4,5,7)] = "Low" # Change bedding top frequency to binary
+
 write.table(farm_info, file = "farm_info.xls", append = FALSE, sep = "\t", dec = ".",
             row.names = FALSE, col.names = TRUE)
 
