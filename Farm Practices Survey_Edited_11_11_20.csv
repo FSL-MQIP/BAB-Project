@@ -1,0 +1,8 @@
+Name of Farm,ID,Bedding,Hold_Variable,Clean_agent,Score_variable,Udder_clip
+Noblehurst Farms,F,Sawdust and low,scra_Y _flush_N,det_Y_ble_N,teat_clean_Y_teat_con_Y_udder_clean_Y,Low
+Mulligan Farm,E,Sand and low,scra_Y _flush_Y,det_towel_ble_towel,teat_clean_N_teat_con_N_udder_clean_N,High
+Baker Brook Dairy LLC,A,Sand and low,scra_N _flush_Y,det_N_ble_Y,teat_clean_N_teat_con_N_udder_clean_Y,High
+Synergy LLC,H,Manure solids and high,scra_Y _flush_Y,det_Y_ble_Y,teat_clean_Y_teat_con_Y_udder_clean_N,High
+"Coyne Farms, Inc.",B,Sawdust and high,scra_Y _flush_N,det_Y_ble_Y,teat_clean_N_teat_con_N_udder_clean_N,Low
+"Lawnel Farms 2, LLC",C,Sand and low,scra_Y _flush_N,det_Y_ble_N,teat_clean_Y_teat_con_Y_udder_clean_Y,Low
+Southview Dairy LLC,G,Manure Solids and high,scra_N _flush_Y,det_Y_ble_Y,teat_clean_Y_teat_con_N_uuder_clean_Y,High
