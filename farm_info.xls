@@ -1,8 +1,0 @@
-"name"	"ID"	"bed_type"	"bed_top_freq"	"detergent"	"bleach"	"hold_scra"	"hold_flush"	"udder_clip_freq"	"udder_clean_score"	"teat_end_clean"	"teat_end_cond"
-"Noblehurst Farms"	"F"	"Sawdust"	3	"Y"	"N"	"Y"	"N"	"Low"	"Yes"	"Yes"	"Yes"
-"Mulligan Farm"	"E"	"Sand"	1	"Paper Towel "	"Paper Towel"	"Y"	"Y"	"High"	"No"	"No"	"No"
-"Baker Brook Dairy LLC"	"A"	"Sand"	2	"N"	"Y"	"N"	"Y"	"High"	"Yes"	"No"	"No"
-"Synergy LLC"	"H"	"Manure Solids"	6	"Y"	"Y"	"Y"	"Y"	"High"	"No"	"Yes"	"Yes"
-"Coyne Farms, Inc."	"B"	"Sawdust"	7	"Y"	"Y"	"Y"	"N"	"Low"	"No"	"No"	"No"
-"Lawnel Farms 2, LLC"	"C"	"Sand"	2	"Y"	"N"	"Y"	"N"	"Low"	"Yes"	"Yes"	"Yes"
-"Southview Dairy LLC"	"G"	"Manure Solids"	7	"Y"	"Y"	"N"	"Y"	"High"	"Yes"	"Yes"	"No"
