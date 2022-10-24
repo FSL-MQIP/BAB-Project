@@ -165,28 +165,21 @@ plot(Spore_comb$Udder_clip, Spore_comb$Count, main="Distribution of spore count 
      ylab="Spore Count (MPN/L)", xlab = "level in udder_clip")
 
 ######Calculation of the mean, standard deviation and SEM of spore counts from all farms####
-t.test(Spore_comb$Count)
+t.test(log10(Spore_comb$Count))
 #mean
-overall_mean = mean(Spore_comb$Count)
-overall_log_mean = log10(mean(Spore_comb$Count))
-overall_mean
+overall_log_mean = mean(log10(Spore_comb$Count))
 overall_log_mean
 #standard deviation
-overall_sd = sd(Spore_comb$Count)
-overall_log_mean = log10(sd(Spore_comb$Count))
-overall_sd
-overall_log_mean
+overall_log_sd = sd(log10(Spore_comb$Count))
+overall_log_sd
 #standard error of the mean = SEM
-overall_sem = sd(Spore_comb$Count)/sqrt(84)
-overall_sem
-log_overall_sem = log10(overall_sem)
+log_overall_sem = sd(log10(Spore_comb$Count))/sqrt(84)
 log_overall_sem
 #mean_by_farm
-mean_per_farm = aggregate(Spore_comb$Count, list(Spore_comb$ID), FUN=mean)
+mean_per_farm = aggregate(log10(Spore_comb$Count), list(Spore_comb$ID), FUN=mean)
 mean_per_farm
 #sd_by_farm
-sd_per_farm = aggregate(Spore_comb$Count, list(Spore_comb$ID), FUN= sd)
-log_sd_per_farm = aggregate(log10(Spore_comb$Count), list(Spore_comb$ID), FUN=sd)
+log_sd_per_farm = aggregate(log10(Spore_comb$Count), list(Spore_comb$ID), FUN= sd)
 #IQR_by_farm
 log_IQR_per_farm = aggregate(log10(Spore_comb$Count), list(Spore_comb$ID), FUN= IQR)
 #summary statistics of each farm
